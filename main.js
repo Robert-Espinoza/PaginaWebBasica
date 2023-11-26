@@ -28,6 +28,11 @@ document.addEventListener("DOMContentLoaded", function () {
     audio.addEventListener("timeupdate", updateProgress);
     audio.addEventListener("ended", playNext);
 
+    // Establecer el volumen por defecto al 30%
+    audio.volume = 0.3;
+    volumeSlider.value = 0.3;
+    volumeValue.textContent = "30%";
+
     function togglePlayPause() {
         if (audio.paused) {
             audio.play();
