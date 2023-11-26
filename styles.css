@@ -645,3 +645,21 @@ button:hover {
 #volumeValue {
   font-size: 0.8em;
 }
+
+.center-container {
+  text-align: center;
+}
+
+.video-container {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  position: relative;
+  display: inline-block;
+  width: 1280px; /* o el ancho que desees */
+  height: 820px; /* o la altura que desees */
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+}
