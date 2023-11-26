@@ -1,13 +1,24 @@
+const playlist = [
+    { title: "Seikai Fuseika", artist: "CIVILIAN", src: "audio/Seikai Fuseikai.mp3", cover: "img/portada1.jpg" },
+    { title: "High Stepper", artist: "Yuiko Oohara", src: "audio/High Stepper.mp3", cover: "img/portada2.jpg" },
+    { title: "Lolis God", artist: "Wataten5", src: "audio/Happy Happy Friends.mp3", cover: "img/portada3.jpg" }
+    // Agrega más canciones según sea necesario
+];
+
 document.addEventListener("DOMContentLoaded", function () {
     const audio = document.getElementById("audio");
     const playPauseBtn = document.getElementById("playPauseBtn");
+    const coverImage = document.getElementById("coverImage");
     const volumeSlider = document.getElementById("volume");
     const volumeValue = document.getElementById("volumeValue");
     const progressContainer = document.getElementById("progress-container");
     const progress = document.getElementById("progress");
     const prevBtn = document.getElementById("prevBtn");
     const nextBtn = document.getElementById("nextBtn");
-    const totalDurationElement = document.getElementById('totalDuration');
+    const titleElement = document.getElementById("title");
+    const artistElement = document.getElementById("artist");
+
+    let currentSongIndex = 0;
 
     playPauseBtn.addEventListener("click", togglePlayPause);
     volumeSlider.addEventListener("input", updateVolume);
@@ -15,29 +26,15 @@ document.addEventListener("DOMContentLoaded", function () {
     prevBtn.addEventListener("click", playPrev);
     nextBtn.addEventListener("click", playNext);
     audio.addEventListener("timeupdate", updateProgress);
-    audio.addEventListener('loadedmetadata', () => {
-    const totalDuration = formatTime(audio.duration);
-    totalDurationElement.textContent = totalDuration;
-});
+    audio.addEventListener("ended", playNext);
 
-  // Establecer el volumen predeterminado al 50%
-    audio.volume = 0.3;
-    volumeSlider.value = 0.3;
-    volumeValue.textContent = "30%";
-
-    playPauseBtn.addEventListener("click", togglePlayPause);
-    volumeSlider.addEventListener("input", updateVolume);
-    progressContainer.addEventListener("click", setProgress);
-    prevBtn.addEventListener("click", playPrev);
-    nextBtn.addEventListener("click", playNext);
-    audio.addEventListener("timeupdate", updateProgress);
     function togglePlayPause() {
         if (audio.paused) {
             audio.play();
-            playPauseBtn.innerHTML = "&#10074;&#10074;"; // Pause symbol
+            playPauseBtn.innerHTML = "&#10074;&#10074;"; // Símbolo de pausa
         } else {
             audio.pause();
-            playPauseBtn.innerHTML = "&#9658;"; // Play symbol
+            playPauseBtn.innerHTML = "&#9658;"; // Símbolo de reproducción
         }
     }
 
@@ -54,23 +51,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function playPrev() {
-        // Implement logic to play the previous song
-        // For simplicity, let's assume you have an array of song sources
-        const playlist = ["song1.mp3", "song2.mp3", "song3.mp3"];
-        const currentSongIndex = playlist.indexOf(audio.src);
-        const prevSongIndex = (currentSongIndex - 1 + playlist.length) % playlist.length;
-        audio.src = playlist[prevSongIndex];
-        audio.play();
+        currentSongIndex = (currentSongIndex - 1 + playlist.length) % playlist.length;
+        loadSong(playlist[currentSongIndex]);
     }
 
     function playNext() {
-        // Implement logic to play the next song
-        // For simplicity, let's assume you have an array of song sources
-        const playlist = ["song1.mp3", "song2.mp3", "song3.mp3"];
-        const currentSongIndex = playlist.indexOf(audio.src);
-        const nextSongIndex = (currentSongIndex + 1) % playlist.length;
-        audio.src = playlist[nextSongIndex];
-        audio.play();
+        currentSongIndex = (currentSongIndex + 1) % playlist.length;
+        loadSong(playlist[currentSongIndex]);
     }
 
     function updateProgress() {
@@ -78,11 +65,12 @@ document.addEventListener("DOMContentLoaded", function () {
         progress.style.width = percentage + "%";
     }
 
-    function updateSongInfo(title, artist) {
-    document.getElementById('title').innerText = title;
-    document.getElementById('artist').innerText = artist;
-}
-
-// Llamas a esta función cuando cambias de canción
-updateSongInfo('Seikai Fuseikai', 'CIVILIAN');
+    function loadSong(song) {
+        titleElement.textContent = song.title;
+        artistElement.textContent = song.artist;
+        coverImage.src = song.cover; // Actualiza la imagen de la portada
+        audio.src = song.src;
+        audio.play();
+        playPauseBtn.innerHTML = "&#10074;&#10074;"; // Símbolo de pausa
+    }
 });
