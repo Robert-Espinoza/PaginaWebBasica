@@ -9,13 +9,13 @@
 
 body{
 
-
     align-items: center;
     justify-content: center;
     min-height: 100vh;
     background-image: url('img/fondo.jpg');
-    background-size: cover; 
+    background-size: cover; /* Establece el tamaño del fondo al 100% de ancho y alto */
     color: #000000;
+
       
 }
 
@@ -49,7 +49,7 @@ body{
 
 .header .nav-links li{
     display: inline-block;
-    padding: 0 20px;    
+    padding: 0 20px; 
 }
 
 .header .nav-links li:hover,
@@ -541,4 +541,107 @@ textarea {
   }
 }
 
+/* Musica*/
 
+.music-container {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Ajusta la altura según sea necesario */
+  
+}
+
+.music-player {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 400px;
+  padding: 15px; /* Agrega espacio interno al contenedor del reproductor */
+}
+
+.cover img {
+  width: 100%;
+  height: 100%; /* Ajustado para ocupar el 100% del contenedor */
+  object-fit: cover; /* Añadido para mantener la proporción y recortar la imagen si es necesario */
+}
+
+.controls {
+  padding: 15px; /* Aumentado el relleno para un espaciado más cómodo */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.controls input[type="range"] {
+  width: 75%; /* Ocupa 3/4 del contenedor */
+  margin: 0 10px;
+}
+
+button {
+  font-size: 1.2em; /* Reducido el tamaño del texto del botón */
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s; /* Agregada una transición de color de fondo */
+}
+
+button:hover {
+  background-color: #45a049; /* Cambiado el color de fondo al pasar el ratón */
+}
+
+#progress-container {
+  width: 80%; /* Ajustado el ancho del contenedor de progreso */
+  height: 8px;
+  background-color: #ddd;
+  margin: 15px auto; /* Aumentado el margen para un espaciado más uniforme */
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+#progress {
+  height: 100%;
+  background-color: #1261d6;
+  width: 0;
+  transition: width 0.1s;
+}
+
+.music-player-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px; /* Ajusta el relleno según sea necesario */
+  background-color: rgba(35, 36, 39, 0.007); /* Ajusta el color de fondo según sea necesario */
+  border-radius: 8px; /* Ajusta el radio de borde según sea necesario */
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
+}
+
+.controls button {
+  font-size: 1.5em;
+  background-color: #f0f0f0;
+  color: #333;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  outline: none;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
+  transition: box-shadow 0.3s ease;
+}
+
+.controls button:hover {
+  box-shadow: 2px 2px 5px #bebebe, -2px -2px 5px #ffffff;
+}
+
+#playPauseBtn {
+  font-size: 1.2em;
+}
+
+#volumeValue {
+  font-size: 0.8em;
+}
