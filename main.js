@@ -1,5 +1,5 @@
 const playlist = [
-    { title: "Seikai Fuseika", artist: "CIVILIAN", src: "audio/Seikai Fuseikai.mp3", cover: "img/portada1.jpg" },
+    { title: "Seikai Fuseikai", artist: "CIVILIAN", src: "audio/Seikai Fuseikai.mp3", cover: "img/portada1.jpg" },
     { title: "High Stepper", artist: "Yuiko Oohara", src: "audio/High Stepper.mp3", cover: "img/portada2.jpg" },
     { title: "Lolis God", artist: "Wataten5", src: "audio/Happy Happy Friends.mp3", cover: "img/portada3.jpg" }
     // Agrega más canciones según sea necesario
