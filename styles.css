@@ -558,6 +558,7 @@ textarea {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   width: 400px;
+  margin-bottom: 80px;
   padding: 15px; /* Agrega espacio interno al contenedor del reproductor */
 }
 
