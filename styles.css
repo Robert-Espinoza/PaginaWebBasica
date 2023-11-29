@@ -292,6 +292,8 @@ body{
     cursor: pointer;
     padding-bottom: 30px;
     flex-direction: column;
+    justify-content: center; /* Alinea el contenido verticalmente */
+    text-align: center;
 }
 
 .card .img img {
@@ -304,7 +306,7 @@ body{
 .carousel .card h2 {
   font-weight: 500;
   font-size: 1.56rem;
-  margin: 30px 0 5px;
+  margin: 10px 0;
 }
 .carousel .card span {
   color: #000000;
@@ -312,7 +314,7 @@ body{
 }
 @media screen and (max-width: 900px) {
   .wrapper .carousel {
-    grid-auto-columns: calc((100% / 2) - 9px);
+    grid-auto-columns: calc((100% / 1) - 9px);
   }
 }
 @media screen and (max-width: 600px) {
