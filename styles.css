@@ -47,13 +47,12 @@ body{
   }
 
   .header .logo {
-      margin-right: 0; /* Elimina el margen derecho en pantallas más pequeñas */
+      
       margin-left: 0; /* Puedes ajustar esto según sea necesario */
   }
 
   .header .logo img {
-      height: 50px; /* Reduzca el tamaño del logo en pantallas más pequeñas */
-      transition: all 0.3s; /* Agrega transición al cambio de tamaño */
+      height: 60px; /* Reduzca el tamaño del logo en pantallas más pequeñas */
   }
 }
 
@@ -63,7 +62,6 @@ body{
 
 .header .nav-links {
   list-style: none;
-  display: flex; /* Hace que los elementos de la lista se muestren en línea */
 }
 
 .header .nav-links {
