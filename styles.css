@@ -14,6 +14,8 @@ body{
     min-height: 100vh;
     background-image: url('img/fondo.jpg');
     background-size: cover; /* Establece el tamaño del fondo al 100% de ancho y alto */
+    background-position: center;
+    background-repeat: no-repeat;
     color: #000000;
 
       
