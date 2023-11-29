@@ -29,28 +29,57 @@ body{
     
 }
 
-.header .logo{
-    cursor: pointer;
-    margin-right: auto;
+.header .logo {
+  cursor: pointer;
+  margin-right: auto;
+  margin-left: 10px; /* Agrega un margen izquierdo para separar el logo del borde izquierdo */
 }
 
-.header .logo img{
+.header .logo img {
     height: 70px;
     width: auto;
     transition: all 0.3s;
+}
+
+@media screen and (max-width: 830px) {
+  .header {
+      padding: 5px 5%; /* Ajusta el relleno para pantallas más pequeñas */
+  }
+
+  .header .logo {
+      margin-right: 0; /* Elimina el margen derecho en pantallas más pequeñas */
+      margin-left: 0; /* Puedes ajustar esto según sea necesario */
+  }
+
+  .header .logo img {
+      height: 50px; /* Reduzca el tamaño del logo en pantallas más pequeñas */
+      transition: all 0.3s; /* Agrega transición al cambio de tamaño */
+  }
 }
 
 .header .logo img:hover{
     transform: scale(1.2);
 }
 
-.header .nav-links{
-    list-style: none;
+.header .nav-links {
+  list-style: none;
+  display: flex; /* Hace que los elementos de la lista se muestren en línea */
 }
 
-.header .nav-links li{
-    display: inline-block;
-    padding: 0 20px; 
+.header .nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.header .nav-links li {
+  margin-right: 20px;
+}
+
+/* Media query para ocultar las opciones de navegación en pantallas estrechas */
+@media screen and (max-width: 830px) {
+  .header .nav-links {
+      display: none;
+  }
 }
 
 .header .nav-links li:hover,
@@ -92,7 +121,7 @@ body{
 }
 
 
-/**/@media screen and (max-width: 800px){
+/**/@media screen and (max-width: 830px){
     .nav-links, .btn {
         display: none;
     }
