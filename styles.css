@@ -228,14 +228,11 @@ body{
     width: 100%;
     position: relative;
     margin: 0 auto; 
-    
-  
     margin-top: 20px;
     margin-bottom: 20px;
   }
 .wrapper i {
 
-  
   top: 50%;
   height: 50px;
   width: 50px;
@@ -250,14 +247,17 @@ body{
   transform: translateY(-50%);
   transition: transform 0.1s linear;
 }
+
 .wrapper i:active{
   transform: translateY(-50%) scale(0.85);
 }
+
+/*Modificar posicion derecha e izquierda del carrusel*/
 .wrapper i:first-child{
-  left: -22px;
+  left: 22px;
 }
 .wrapper i:last-child{
-  right: -22px;
+  right: 22px;
 }
 .wrapper .carousel{
   display: grid;
@@ -269,7 +269,11 @@ body{
   border-radius: 8px;
   scroll-behavior: smooth;
   scrollbar-width: none;
+  margin: 0 auto; /* Agregado margin auto para centrar y márgenes laterales en pantallas más grandes */
+  max-width: 80%; /* Ajusta el ancho máximo según sea necesario */
 }
+
+
 .carousel::-webkit-scrollbar {
   display: none;
 }
